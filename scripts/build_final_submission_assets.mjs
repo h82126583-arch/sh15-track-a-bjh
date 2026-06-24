@@ -113,8 +113,8 @@ writeCsv(checklistCsv, [
   { requirement: '500m grid', status: 'proxy', evidence: 'outputs/sh15_trackA_500m_grid_proxy.geojson', risk: 'Grid squares are centered on scored H3 cells, not a full authoritative municipal 500m lattice.' },
   { requirement: 'Four-mode 15-minute isochrones', status: 'proxy', evidence: 'walk/bike/transit/car baseline proxy fields in H3 and 500m outputs', risk: 'Not true network travel-time isochrones.' },
   { requirement: 'H3 r8 scored GeoJSON', status: 'done', evidence: 'outputs/sh15_trackA_h3_r8_scored.geojson', risk: 'Scores depend on available proxy data quality.' },
-  { requirement: 'Public deployed web app', status: 'pending_user_account', evidence: 'webapp/ static folder is locally runnable', risk: 'Needs GitHub Pages/Netlify/Vercel publication from user account.' },
-  { requirement: 'Trello board shared link', status: 'pending_user_account', evidence: 'No local Trello export found.', risk: 'Cannot be reconstructed honestly if not managed during the five weeks.' },
+  { requirement: 'Public deployed web app', status: 'done', evidence: 'https://h82126583-arch.github.io/sh15-track-a-bjh/', risk: 'Uses external Leaflet CDN; network restrictions may affect loading.' },
+  { requirement: 'Trello board shared link', status: 'user_completed', evidence: 'Student reported Trello board completed; submit shared Trello link separately.', risk: 'Historical weekly movement cannot be verified from local files.' },
   { requirement: 'Academic integrity / AI disclosure', status: 'done', evidence: 'README_PROJECT.md and final submission notes', risk: 'Disclosure wording should be kept with submitted materials.' },
 ], ['requirement', 'status', 'evidence', 'risk']);
 
@@ -145,6 +145,8 @@ This final package addresses Track A: Healthy Lifestyle and Sport. The project i
 
 - Three notebooks under \`notebooks/\` covering data collection, H3 grid/proxy accessibility, and scoring/export inspection.
 - Static Web app under \`webapp/\`, served locally with \`npm run serve\`.
+- Public Web app: \`https://h82126583-arch.github.io/sh15-track-a-bjh/\`.
+- GitHub repository: \`https://github.com/h82126583-arch/sh15-track-a-bjh\`.
 - Generated H3 GeoJSON and CSV outputs under \`outputs/\`.
 - 500m grid proxy output: \`outputs/sh15_trackA_500m_grid_proxy.geojson\`.
 - District-level summary: \`outputs/sh15_trackA_district_summary.csv\`.
@@ -192,7 +194,7 @@ npm run build:all
 npm run serve
 \`\`\`
 
-Then open \`http://127.0.0.1:5174/\`.
+Then open \`http://127.0.0.1:5174/\`. The deployed version is available at \`https://h82126583-arch.github.io/sh15-track-a-bjh/\`.
 
 The app supports layer switching, travel-mode switching, weighted Top10 recommendations, district filtering, selected-H3 inspection, and exports for Top10 CSV, weights JSON, selected-H3 JSON, and selected-H3 Markdown reports.
 
@@ -200,7 +202,7 @@ The app supports layer switching, travel-mode switching, weighted Top10 recommen
 
 - The project uses an H3 neighborhood accessibility proxy, not true graph-tool network isochrones.
 - The 500m grid file is a linked proxy centered on scored H3 cells, not a complete authoritative Shanghai 500m lattice.
-- The Web app is deployment-ready as a static folder but has not been published to an external hosting service from this machine.
+- The Web app is deployed through GitHub Pages; if a restricted network blocks the Leaflet CDN, run the local version with \`npm run serve\`.
 - The selected-H3 panel reports metro and rent requirements transparently as unavailable/approximated because no verified metro-distance or rental-listing dataset is present in the provided Track A data.
 - AQI is district-level, so it cannot represent within-district micro-variation.
 - POI categories are proxy indicators; final policy conclusions should be checked against local knowledge and network travel time.
@@ -216,12 +218,12 @@ Codex/AI assistance was used to help organize code, draft documentation, and val
 - [x] H3 scored GeoJSON generated.
 - [x] 500m grid proxy generated and documented.
 - [x] Web app implemented and locally runnable.
+- [x] Web app externally deployed through GitHub Pages.
 - [x] District filter and export functions implemented.
 - [x] Final report and district summary generated.
 - [x] AI assistance disclosure added.
 - [ ] True graph-tool isochrones completed.
-- [ ] Web app externally deployed.
-- [ ] Trello board exported or submitted.
+- [x] Trello board organized by student; submit the shared Trello link separately.
 `;
 
 const reportPath = join(outputsDir, 'sh15_trackA_final_submission.md');

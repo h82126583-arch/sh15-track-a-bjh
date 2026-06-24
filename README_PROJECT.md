@@ -7,6 +7,8 @@ This folder turns the provided course materials into a reproducible Track A fina
 - Track: Healthy Lifestyle and Sport.
 - H3 output: resolution 8 GeoJSON.
 - Web app: static Leaflet application under `webapp/`.
+- Public deployment: https://h82126583-arch.github.io/sh15-track-a-bjh/
+- GitHub repository: https://github.com/h82126583-arch/sh15-track-a-bjh
 - Data build: `scripts/build_track_a_dataset.mjs`.
 - 500m grid proxy build: `scripts/build_500m_grid_proxy.mjs`.
 - Final assets build: `scripts/build_final_submission_assets.mjs`.
@@ -43,6 +45,13 @@ Then open the local URL printed by the server.
 - `outputs/sh15_trackA_final_submission.md`
 - `webapp/data/sh15_trackA_h3_r8_scored.geojson`
 
+## Recommended Submission Materials
+
+- Web app URL: `https://h82126583-arch.github.io/sh15-track-a-bjh/`
+- GitHub repository URL: `https://github.com/h82126583-arch/sh15-track-a-bjh`
+- Trello shared board link: submit separately from Trello.
+- Main review files: `README.md`, `SUBMISSION_GUIDE.md`, `notebooks/`, `outputs/sh15_trackA_final_submission.md`, and `outputs/sh15_pdf_requirement_checklist.csv`.
+
 ## Web App Features
 
 - Layer switching: Composite, Baseline, Track A, Green, Air.
@@ -68,7 +77,7 @@ The raw baseline and Track A scores are then converted to empirical percentiles 
 
 This first prototype uses H3 neighborhood proxy accessibility rather than graph-based isochrones. The provided network notebook depends on `graph_tool`, `policosm`, and old absolute paths, so it needs a separate environment cleanup before true network isochrones can replace the proxy scores.
 
-The Web app is ready to be hosted as a static folder, but this machine has not published it to an external hosting service. For final submission, provide either the local demonstration URL during presentation or deploy the `webapp/` folder through a static host such as GitHub Pages, Netlify, or Vercel.
+The Web app is deployed through GitHub Pages at `https://h82126583-arch.github.io/sh15-track-a-bjh/`.
 
 No verified rental-listing dataset is present in this Track A folder, so the selected-H3 panel reports rent band as not collected rather than inventing a value. Metro distance is represented only by a transit POI proxy count unless a station layer is added before submission.
 
@@ -76,7 +85,7 @@ No verified rental-listing dataset is present in this Track A folder, so the sel
 
 - Strongest completed parts: H3 r8 scored GeoJSON, Track A Web app, district filter, weighted Top10 recommender, data transparency, exports, data provenance.
 - Improved but still proxy-based: 500m grid and walk/bike/transit/car isochrone stage.
-- Still needs user/account action: public deployed URL and Trello shared board.
+- User/account submission item: Trello shared board link should be copied from Trello and submitted separately.
 - Still not a true replacement for the brief: graph-based 15-minute network isochrones.
 
 ## Academic Integrity and AI Disclosure

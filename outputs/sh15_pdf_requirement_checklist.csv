@@ -4,6 +4,6 @@ Three documented notebooks,partial,notebooks/01_data_collection.ipynb; notebooks
 500m grid,proxy,outputs/sh15_trackA_500m_grid_proxy.geojson,"Grid squares are centered on scored H3 cells, not a full authoritative municipal 500m lattice."
 Four-mode 15-minute isochrones,proxy,walk/bike/transit/car baseline proxy fields in H3 and 500m outputs,Not true network travel-time isochrones.
 H3 r8 scored GeoJSON,done,outputs/sh15_trackA_h3_r8_scored.geojson,Scores depend on available proxy data quality.
-Public deployed web app,pending_user_account,webapp/ static folder is locally runnable,Needs GitHub Pages/Netlify/Vercel publication from user account.
-Trello board shared link,pending_user_account,No local Trello export found.,Cannot be reconstructed honestly if not managed during the five weeks.
+Public deployed web app,done,https://h82126583-arch.github.io/sh15-track-a-bjh/,Uses external Leaflet CDN; network restrictions may affect loading.
+Trello board shared link,user_completed,Student reported Trello board completed; submit shared Trello link separately.,Historical weekly movement cannot be verified from local files.
 Academic integrity / AI disclosure,done,README_PROJECT.md and final submission notes,Disclosure wording should be kept with submitted materials.

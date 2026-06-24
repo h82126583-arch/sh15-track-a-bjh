@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>15-Minute Shanghai - Track A</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="map-stage">
+        <div id="map" class="map"></div>
+
+        <header class="topbar">
+          <div class="brand">
+            <div class="brand-mark">A</div>
+            <div>
+              <span>Healthy Lifestyle & Sport</span>
+              <h1>15-Minute Shanghai</h1>
+            </div>
+          </div>
+          <div id="dataPill" class="data-pill">Loading H3 Data</div>
+        </header>
+
+        <nav class="mode-rail" aria-label="Travel mode">
+          <button class="icon-button active" data-mode="walk" title="Walk">W</button>
+          <button class="icon-button" data-mode="bike" title="Bike">B</button>
+          <button class="icon-button" data-mode="transit" title="Transit">T</button>
+          <button class="icon-button" data-mode="car" title="Car">C</button>
+        </nav>
+
+        <section class="control-panel">
+          <div class="panel-head compact">
+            <div>
+              <span class="eyebrow">Layer</span>
+              <h2 id="activeLayerTitle">Composite - Walk</h2>
+            </div>
+          </div>
+          <div class="segmented" id="layerButtons">
+            <button class="active" data-layer="composite_score">Composite</button>
+            <button data-layer="baseline_score">Baseline</button>
+            <button data-layer="trackA_score">Track A</button>
+            <button data-layer="green_count">Green</button>
+            <button data-layer="air_quality_score">Air</button>
+          </div>
+          <div class="inline-legend" aria-label="Score legend">
+            <div class="legend-head">
+              <span class="eyebrow">Score</span>
+              <strong id="legendMetric">Composite - Walk</strong>
+            </div>
+            <div class="legend-bar" aria-hidden="true"></div>
+            <div class="legend-labels">
+              <span>Low</span>
+              <span>Mid</span>
+              <span>High</span>
+            </div>
+          </div>
+          <div class="summary-row">
+            <div class="stat"><span>Hexes</span><strong id="hexCount">n/a</strong></div>
+            <div class="stat"><span>Avg Score</span><strong id="avgScore">n/a</strong></div>
+          </div>
+        </section>
+
+        <section id="recommender" class="recommender">
+          <div class="panel-head compact">
+            <div>
+              <span class="eyebrow">Where To Live</span>
+              <h2>Priority Sliders</h2>
+            </div>
+            <button id="toggleRecommender" class="panel-action" type="button" title="Collapse recommender" aria-expanded="true">-</button>
+          </div>
+          <div id="recommenderBody" class="recommender-body">
+            <label class="filter-row">
+              <span>District</span>
+              <select id="districtFilter">
+                <option value="all">All Shanghai</option>
+              </select>
+            </label>
+            <label class="slider-row"><span>Baseline</span><input data-weight="baseline" type="range" min="0" max="5" value="3" /><strong>3</strong></label>
+            <label class="slider-row"><span>Sport</span><input data-weight="sport" type="range" min="0" max="5" value="5" /><strong>5</strong></label>
+            <label class="slider-row"><span>Green</span><input data-weight="green" type="range" min="0" max="5" value="4" /><strong>4</strong></label>
+            <label class="slider-row"><span>Cycling</span><input data-weight="cycling" type="range" min="0" max="5" value="2" /><strong>2</strong></label>
+            <label class="slider-row"><span>Air</span><input data-weight="air" type="range" min="0" max="5" value="3" /><strong>3</strong></label>
+            <ol id="topList" class="top-list"></ol>
+            <div class="export-row" aria-label="Export analysis">
+              <button id="exportTop10" class="secondary-action" type="button">Export Top10</button>
+              <button id="exportWeights" class="secondary-action" type="button">Weights</button>
+            </div>
+            <div id="exportStatus" class="export-status" role="status" aria-live="polite"></div>
+          </div>
+        </section>
+
+        <button id="infoButton" class="info-button" title="Data transparency">i</button>
+      </section>
+
+      <aside id="detail" class="detail">
+        <div class="panel-head">
+          <div>
+            <span class="eyebrow">Selected H3</span>
+            <h2 id="detailTitle">No hex selected</h2>
+          </div>
+          <div class="detail-actions">
+            <button id="exportReport" class="secondary-action small" type="button" disabled>Report</button>
+            <button id="exportSelected" class="secondary-action small" type="button" disabled>Export H3</button>
+            <button id="closeDetail" class="close-button">x</button>
+          </div>
+        </div>
+        <div id="detailBody" class="detail-body">
+          <p class="muted">Click a hexagon to inspect access, healthy-lifestyle signals, district, and AQI.</p>
+        </div>
+      </aside>
+
+      <aside id="transparency" class="transparency">
+        <div class="panel-head">
+          <div>
+            <span class="eyebrow">Data Transparency</span>
+            <h2>Sources & Limits</h2>
+          </div>
+          <button id="closeInfo" class="close-button">x</button>
+        </div>
+        <p>Education uses the 2026 Gaode / AMap POI package because the course chat states the 2024 education data has a problem.</p>
+        <p>Other POI categories use the provided 2023 Shanghai shapefiles. AQI uses the official Shanghai 2025 district daily export.</p>
+        <p>Scores are H3 neighborhood proxy accessibility with an exported 500m grid proxy. True graph isochrones should replace this layer after the graph-tool environment is cleaned up.</p>
+        <p>Metro distance and rent band are not directly measured in the provided Track A data; the detail panel shows transit proxy counts and marks rent as not collected.</p>
+      </aside>
+    </main>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

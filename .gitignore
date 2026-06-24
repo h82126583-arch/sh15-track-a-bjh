@@ -1,0 +1,10 @@
+node_modules/
+2023_Shp/
+EDU 2026 POI/
+shanghai_aqi_official_2025_20250101_20251231_package/
+*.parquet
+H3 example urban_analytics.ipynb
+shanghai-network-extract.ipynb
+.playwright-cli/
+.DS_Store
+Thumbs.db

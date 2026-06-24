@@ -1,0 +1,2 @@
+﻿output,grid_spacing_m,feature_count,linked_h3_resolution,method
+sh15_trackA_500m_grid_proxy.geojson,500,11344,8,500m square proxy centered on each scored H3 r8 cell centroid; used as reproducible evidence of the requested grid stage while true 4-mode network isochrones remain pending.

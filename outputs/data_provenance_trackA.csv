@@ -1,0 +1,20 @@
+﻿dataset,source,rows_read,rows_used,notes
+2023 POI - 汽车服务,2023_Shp.zip from course WeChat record,29606,29606,WGS84 POI DBF read directly; matching shapefile sidecars retained.
+2023 POI - 餐饮服务,2023_Shp.zip from course WeChat record,142087,142087,WGS84 POI DBF read directly; matching shapefile sidecars retained.
+2023 POI - 风景名胜,2023_Shp.zip from course WeChat record,6703,6703,WGS84 POI DBF read directly; matching shapefile sidecars retained.
+2023 POI - 交通设施服务,2023_Shp.zip from course WeChat record,86065,86065,WGS84 POI DBF read directly; matching shapefile sidecars retained.
+2023 POI - 住宿服务,2023_Shp.zip from course WeChat record,29444,29444,WGS84 POI DBF read directly; matching shapefile sidecars retained.
+2023 POI - 体育休闲服务,2023_Shp.zip from course WeChat record,30458,30458,WGS84 POI DBF read directly; matching shapefile sidecars retained.
+2023 POI - 购物服务,2023_Shp.zip from course WeChat record,198286,198286,WGS84 POI DBF read directly; matching shapefile sidecars retained.
+2023 POI - 科教文化服务,2023_Shp.zip from course WeChat record,39876,39876,WGS84 POI DBF read directly; matching shapefile sidecars retained.
+2023 POI - 公共设施,2023_Shp.zip from course WeChat record,18005,18005,WGS84 POI DBF read directly; matching shapefile sidecars retained.
+2023 POI - 公司企业,2023_Shp.zip from course WeChat record,142224,142224,WGS84 POI DBF read directly; matching shapefile sidecars retained.
+2023 POI - 医疗保健服务,2023_Shp.zip from course WeChat record,23135,23135,WGS84 POI DBF read directly; matching shapefile sidecars retained.
+2023 POI - 商务住宅,2023_Shp.zip from course WeChat record,41628,41628,WGS84 POI DBF read directly; matching shapefile sidecars retained.
+2023 POI - 地名地址信息,2023_Shp.zip from course WeChat record,490460,490460,WGS84 POI DBF read directly; matching shapefile sidecars retained.
+2023 POI - 政府机构及社会团体,2023_Shp.zip from course WeChat record,52224,52224,WGS84 POI DBF read directly; matching shapefile sidecars retained.
+2023 POI - 生活服务,2023_Shp.zip from course WeChat record,147345,147345,WGS84 POI DBF read directly; matching shapefile sidecars retained.
+2023 POI - 道路附属设施,2023_Shp.zip from course WeChat record,341,341,WGS84 POI DBF read directly; matching shapefile sidecars retained.
+2023 POI - 金融保险服务,2023_Shp.zip from course WeChat record,13032,13032,WGS84 POI DBF read directly; matching shapefile sidecars retained.
+EDU 2026 POI\preschool_k12_clean.csv,Gaode / AMap API; provided as EDU 2026 POI.zip,4143,4143,GCJ-02 coordinates converted to WGS84 before H3 indexing.
+shanghai_aqi_official_2025_20250101_20251231_package\clean\shanghai_aqi_district_daily_sthj_official_20250101_20251231.csv,Shanghai Municipal Bureau of Ecology and Environment official 2025 export,5840,5840,Annual district mean AQI; blank AQI rows ignored.

@@ -1,0 +1,16 @@
+{
+  "name": "sh15-track-a-bjh",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:data": "node scripts/build_track_a_dataset.mjs",
+    "build:grid": "node scripts/build_500m_grid_proxy.mjs",
+    "build:final": "node scripts/build_final_submission_assets.mjs",
+    "build:all": "npm run build:data && npm run build:grid && npm run build:final",
+    "serve": "node scripts/serve_static.mjs"
+  },
+  "dependencies": {
+    "h3-js": "^4.4.0"
+  }
+}

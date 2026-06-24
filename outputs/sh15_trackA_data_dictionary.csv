@@ -1,0 +1,7 @@
+﻿field,description
+baseline_score,"Walk-mode baseline accessibility proxy across six everyday need categories, scaled by empirical percentile."
+trackA_score,"Healthy lifestyle score from sport, green, cycling support, fresh food, and AQI, scaled by empirical percentile."
+composite_score,0.55 baseline_score + 0.45 trackA_score.
+walk/bike/transit/car_baseline_score,"Mode-specific H3 neighborhood proxy score, scaled by empirical percentile."
+sport_desert,Positive gap where baseline access is stronger than Track A healthy-lifestyle access.
+mean_aqi,2025 official annual mean AQI for the dominant district.
